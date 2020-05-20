@@ -3,11 +3,12 @@
 
 <head>
 	<link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">	
 </head>
 
 <body>
 	<div>Weather prediction using AI</div>
-	<button type="button" onclick="init()">Predict wheater</button>
 
 	<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<div class="file-upload">
@@ -50,7 +51,7 @@
     };
 
     reader.readAsDataURL(input.files[0]);
-
+	init()
   } else {
     removeUpload();
   }
@@ -102,7 +103,7 @@ $('.image-upload-wrap').bind('dragover', function () {
 			var resultMsg;
 			switch(prediction[0].className) {
 				case "권적운":
-					resultMsg = "High possibility of raining within 1 or 2 days"
+					resultMsg = "Possibility of raining within 1 or 2 days"
 					break;
 				case "권운":
 					resultMsg = "Weather will gets cloudy"
