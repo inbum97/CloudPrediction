@@ -101,21 +101,22 @@ $('.image-upload-wrap').bind('dragover', function () {
 			const prediction = await model.predict(image, false);
 			prediction.sort((a,b) => parseFloat(b.probability) - parseFloat(a.probability));
 			var resultMsg;
+			var pos = "There is a "+ prediction[0].probability.toFixed(2)*100 + "%";
 			switch(prediction[0].className) {
 				case "권적운":
-					resultMsg = "Possibility of raining within 1 or 2 days"
+					resultMsg = pos +" possibility of raining within 1 or 2 days"
 					break;
 				case "권운":
-					resultMsg = "Weather will gets cloudy"
+					resultMsg = pos + " Weather will gets cloudy"
 					break;
 				case "먹구름":
-					resultMsg = "Raining or Snowing is expected"
+					resultMsg = pos + " Raining or Snowing is expected"
 					break;
 				case "적란운":
-					resultMsg = "High Possibility of sudden shower (소나기)"
+					resultMsg = pos + " High Possibility of sudden shower (소나기)"
 					break;
 				case "뭉게구름":
-					resultMsg = "Sunny day is expected"
+					resultMsg = pos + " Sunny day is expected"
 					break;
 				default:
 					resultMsg = "Unknown"
