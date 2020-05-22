@@ -1,3 +1,11 @@
+h1{
+	text-align: center;
+	color : cornflowerblue;
+	font-size : 55px;
+	margin-top : 150px;
+}
+
+
 body {
   font-family: sans-serif;
   background-color: #eeeeee;
